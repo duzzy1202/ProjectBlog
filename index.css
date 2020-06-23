@@ -226,3 +226,9 @@ a {
 .mobile-side-bar .menu-box ul > li.active > a:not(:only-child)::after {
   content: "[-]";
 }
+
+.main-img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
