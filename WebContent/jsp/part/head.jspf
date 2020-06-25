@@ -30,22 +30,22 @@
 <body>
 	<div class="top-bar visible-md-up">
 		<div class="con height-100p flex flex-jc-sb">
-			<a href="/blog/jsp/home/main.jsp" class="logo flex flex-ai-c"> <i
+			<a href="/blog/jsp/s/home/main.jsp" class="logo flex flex-ai-c"> <i
 				class="fab fa-free-code-camp"></i>
 			</a>
 
 			<nav class="menu-box-1 flex">
 				<ul class="flex height-100p">
-					<li><a href="/blog/jsp/home/main.jsp" class="height-100p flex flex-ai-c">홈 화면</a></li>
+					<li><a href="/blog/jsp/s/home/main.jsp" class="height-100p flex flex-ai-c">홈 화면</a></li>
 					<li><a href="#" class="height-100p flex flex-ai-c">게시판</a>
 						<ul>
-							<li><a href="/blog/jsp/home/board1.jsp">무슨게시판</a></li>
-							<li><a href="/blog/jsp/home/board2.jsp">어떤게시판</a></li>
-							<li><a href="/blog/jsp/home/board3.jsp">그냥게시판</a></li>
+							<li><a href="/blog/jsp/s/home/board1.jsp">무슨게시판</a></li>
+							<li><a href="/blog/jsp/s/home/board2.jsp">어떤게시판</a></li>
+							<li><a href="/blog/jsp/s/home/board3.jsp">그냥게시판</a></li>
 						</ul></li>
-					<li><a href="/blog/jsp/home/pic.jsp" class="height-100p flex flex-ai-c">사진</a></li>
-					<li><a href="/blog/jsp/home/video.jsp" class="height-100p flex flex-ai-c">영상</a></li>
-					<li><a href="/blog/jsp/home/sns.jsp" class="height-100p flex flex-ai-c">SNS</a></li>
+					<li><a href="/blog/jsp/s/home/pic.jsp" class="height-100p flex flex-ai-c">사진</a></li>
+					<li><a href="/blog/jsp/s/home/video.jsp" class="height-100p flex flex-ai-c">영상</a></li>
+					<li><a href="/blog/jsp/s/home/sns.jsp" class="height-100p flex flex-ai-c">SNS</a></li>
 				</ul>
 			</nav>
 		</div>
@@ -56,7 +56,7 @@
 			<div></div>
 			<div></div>
 			<div></div>
-		</a> <a href="/blog/jsp/home/main.jsp"
+		</a> <a href="/blog/jsp/s/home/main.jsp"
 			class="logo flex flex-ai-c absolute-center absolute-middle"> <i
 			class="fab fa-free-code-camp"></i>
 		</a>
@@ -64,16 +64,16 @@
 	<div class="mobile-side-bar">
 		<div class="menu-box">
 			<ul>
-				<li><a href="/blog/jsp/home/main.jsp" class="block">홈화면</a></li>
+				<li><a href="/blog/jsp/s/home/main.jsp" class="block">홈화면</a></li>
 				<li><a href="#" class="block">게시판</a>
 					<ul>
-						<li><a href="/blog/jsp/home/board1.jsp" class="block">무슨게시판</a></li>
-						<li><a href="/blog/jsp/home/board2.jsp" class="block">어떤게시판</a></li>
-						<li><a href="/blog/jsp/home/board3.jsp" class="block">그냥게시판</a></li>
+						<li><a href="/blog/jsp/s/home/board1.jsp" class="block">무슨게시판</a></li>
+						<li><a href="/blog/jsp/s/home/board2.jsp" class="block">어떤게시판</a></li>
+						<li><a href="/blog/jsp/s/home/board3.jsp" class="block">그냥게시판</a></li>
 					</ul></li>
-				<li><a href="/blog/jsp/home/pic.jsp" class="block">사진</a></li>
-				<li><a href="/blog/jsp/home/video.jsp" class="block">영상</a></li>
-				<li><a href="/blog/jsp/home/sns.jsp" class="block">SNS</a></li>
+				<li><a href="/blog/jsp/s/home/pic.jsp" class="block">사진</a></li>
+				<li><a href="/blog/jsp/s/home/video.jsp" class="block">영상</a></li>
+				<li><a href="/blog/jsp/s/home/sns.jsp" class="block">SNS</a></li>
 			</ul>
 		</div>
 	</div>
