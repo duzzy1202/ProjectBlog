@@ -43,8 +43,8 @@
 							<li><a href="/blog/jsp/s/home/board2.jsp">어떤게시판</a></li>
 							<li><a href="/blog/jsp/s/home/board3.jsp">그냥게시판</a></li>
 						</ul></li>
-					<li><a href="/blog/jsp/s/home/pic.jsp" class="height-100p flex flex-ai-c">사진</a></li>
-					<li><a href="/blog/jsp/s/home/video.jsp" class="height-100p flex flex-ai-c">영상</a></li>
+					<li><a href="/blog/jsp/s/home/pic.jsp" class="height-100p flex flex-ai-c">취미</a></li>
+					<li><a href="/blog/jsp/s/home/video.jsp" class="height-100p flex flex-ai-c">기타</a></li>
 					<li><a href="/blog/jsp/s/home/sns.jsp" class="height-100p flex flex-ai-c">SNS</a></li>
 				</ul>
 			</nav>

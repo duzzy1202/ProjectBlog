@@ -17,8 +17,8 @@ public class ArticleDoWriteServlet extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 
-		String url = "jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
-		String user = "sbsst";
+		String url = "jdbc:mysql://site34.iu.gy:3306/site34?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
+		String user = "site34";
 		String password = "sbs123414";
 		String driverName = "com.mysql.cj.jdbc.Driver";
 
@@ -33,6 +33,8 @@ public class ArticleDoWriteServlet extends HttpServlet {
 		} catch (ClassNotFoundException e) {
 			System.err.printf("[드라이버 클래스 로딩 예외] : %s\n", e.getMessage());
 		}
+		
+		request.getRequestDispatcher("/jsp/s/home/board1.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

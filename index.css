@@ -56,12 +56,39 @@ a {
   top: 50%;
   transform: translatey(-50%);
 }
-
+.fontsize-4rem {
+  font-size: 4rem;
+}
 /* 커스텀 */
 .con {
   max-width: 1356px;
 }
-
+/* 메인 로고 */
+.main-logo {
+  display: flex;
+  font-size: 4rem;
+  justify-content: center;
+  align-items: center;
+  color: red;
+  background-color: black;
+  height: 100px;
+  width: 100%;
+}
+.main-logo > div {
+  border-radius: 40px;
+  position: absolute;
+  height: 80px;
+  width: 80px;
+  top: 10px;
+  background-color: orange;
+  z-index: 1;
+}
+.main-logo a {
+  z-index: 2;
+  height: 90px;
+  width: 100px;
+  text-align: center;
+}
 /* 탑바 */
 @media ( max-width: 799px ) {
   .visible-md-up {
@@ -77,33 +104,54 @@ a {
 
 
 .top-bar {
-  height: 150px;
-  background-color: #08088A;
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: center;
 }
-.top-bar .logo {
-  font-size: 4rem;
-  color: #FE9A2E;
-  margin-left: 10%;
+.top-bar .menu-box-1 {
+  display: flex;
+  height: 100%;
 }
-
+.top-bar .menu-box-1 > ul {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.top-bar .menu-box-1 > ul > li {
+  width: 180px;
+  display: flex;
+  justify-content: space-around;
+}
 .top-bar .menu-box-1 > ul > li > a {
   font-weight: bold;
   font-size: 1.5rem;
   color: #FE9A2E;
   padding: 0 40px;
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;;
 }
 .top-bar .menu-box-1 > ul > li:hover > a {
   background-color: #CEE3F6;
 }
 .top-bar .menu-box-1 ul ul {
+  position: relative;
   display: none;
   top: 100%;
+  width: 100%;
 }
 .top-bar .menu-box-1 ul > li:hover ul {
   display: block;
 }
+.top-bar .menu-box-1 ul ul > li {
+  display: inline-block;
+  height: 50px;
+  width: 100%;
+}
 .top-bar .menu-box-1 ul ul a {
-  display: block;
+  display: inline-block;
   text-align: center;
   background-color: #CEE3F6;
   color: #045FB4;
@@ -225,10 +273,4 @@ a {
 
 .mobile-side-bar .menu-box ul > li.active > a:not(:only-child)::after {
   content: "[-]";
-}
-
-.main-img {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
 }

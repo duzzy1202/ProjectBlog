@@ -15,49 +15,63 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.blog.DTO.Article;
-import com.blog.DTO.DBConnection;
+import com.blog.DTO.DBUtil;
 
-@WebServlet("/s/article/doWrite")
+@WebServlet("/s/article/list")
 public class ArticleListServlet extends HttpServlet {
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		response.setContentType("text/html; charset=UTF-8");
-
-		String url = "jdbc:mysql://localhost:3306/blog?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
-		String user = "sbsst";
+	private List<Article> getArticles() {
+		String url = "jdbc:mysql://site34.iu.gy:3306/site34?serverTimezone=Asia/Seoul&useOldAliasMetadataBehavior=true";
+		String user = "site34";
 		String password = "sbs123414";
 		String driverName = "com.mysql.cj.jdbc.Driver";
 
-		Connection connection;
+		String sql = "";
+
+		sql += String.format("SELECT * ");
+		sql += String.format("FROM article ");
+		sql += String.format("ORDER BY id DESC ");
+
+		List<Article> articles = new ArrayList<>();
+
+		Connection conn = null;
 
 		try {
 			Class.forName(driverName);
-			connection = DriverManager.getConnection(url, user, password);
-			response.getWriter().append("연결되었습니다.");
-		} catch (SQLException e) {
-			System.err.printf("[SQL 예외] : %s\n", e.getMessage());
+			conn = DriverManager.getConnection(url, user, password);
+
+			List<Map<String, Object>> rows = DBUtil.selectRows(conn, sql);
+
+			for (Map<String, Object> row : rows) {
+				articles.add(new Article(row));
+			}
+
 		} catch (ClassNotFoundException e) {
-			System.err.printf("[드라이버 클래스 로딩 예외] : %s\n", e.getMessage());
+			System.err.println("[ClassNotFoundException 예외]");
+			System.err.println("msg : " + e.getMessage());
+		} catch (SQLException e) {
+			System.err.println("[SQLException 예외]");
+			System.err.println("msg : " + e.getMessage());
+		} finally {
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {
+					System.err.println("[SQLException 예외]");
+					System.err.println("msg : " + e.getMessage());
+				}
+			}
 		}
-		
-		StringBuilder sb = new StringBuilder();
 
-		sb.append(String.format("SELECT * "));
-		sb.append(String.format("FROM article "));
-		sb.append(String.format("WHERE 1 "));
-		sb.append(String.format("ORDER BY A.id DESC "));
-
-		List<Article> articles = new ArrayList<>();
-		List<Map<String, Object>> rows = connection.selectRows(sb.toString());
-		
-		for ( Map<String, Object> row : rows ) {
-			articles.add(new Article(row));
-		}
+		return articles;
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		doGet(request, response);
-	}
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html; charset=UTF-8");
 
+		List<Article> articles = getArticles();
+
+		req.setAttribute("articles", articles);
+		req.getRequestDispatcher("/jsp/s/home/board1.jsp").forward(req, resp);
+	}
 }
